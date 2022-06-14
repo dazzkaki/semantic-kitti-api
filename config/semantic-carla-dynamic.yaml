@@ -1,0 +1,124 @@
+# This file is covered by the LICENSE file in the root of this project.
+name : "kitti"
+labels: 
+  0 :  "background"      # use
+  1 :  "building" 
+  2 :  "PTW"            # use
+  3 :  "other"
+  4 :  "pedestrian"     # use
+  5 :  "pole"
+  6 :  "road line"
+  7 :  "road"
+  8 :  "sidewalk"
+  9 :  "CommVeh"        # use
+  10 : "vehicle"        # use
+  11 : "wall"
+  12 : "traffic sign"
+  13 : "sky"
+  14 : "ground"
+  15 : "bridge"
+  16 : "rail track"
+  17 : "guard rail"
+  18 : "traffic light"
+  19 : "static"
+  20 : "dynamic"
+  21 : "Bicycle"        # use
+  22 : "terrain"
+color_map: # bgr
+  0  : [ 200, 200, 200]   # use "background" 0
+  1  : [   0,   0,   0]
+  2  : [   0, 255,   0]   # use "PTW" 1
+  3  : [   0,   0,   0]
+  4  : [   0,   0, 225]   # use "pedestrian" 2
+  5  : [   0,   0,   0]
+  6  : [   0,   0,   0]
+  7  : [   0,   0,   0]
+  8  : [   0,   0,   0]
+  9  : [ 255, 255,   0]   # use "CommVeh" 3
+  10 : [ 255,   0,   0]   # use "vehicle" 4
+  11 : [   0,   0,   0]
+  12 : [   0,   0,   0]
+  13 : [   0,   0,   0]
+  14 : [   0,   0,   0]
+  15 : [   0,   0,   0]
+  16 : [   0,   0,   0]
+  17 : [   0,   0,   0]
+  18 : [   0,   0,   0]
+  19 : [   0,   0,   0]
+  20 : [   0,   0,   0]
+  21 : [   0, 255, 255]   # use "Bicycle" 5
+  22 : [   0,   0,   0]
+content: # as a ratio with the total number of points
+  0  : 0.914702124
+  1  : 0.0
+  2  : 0.001902437
+  3  : 0.0
+  4  : 0.00541877
+  5  : 0.0
+  6  : 0.0
+  7  : 0.0
+  8  : 0.0
+  9  : 0.032984334
+  10 : 0.042852188
+  11 : 0.0
+  12 : 0.0
+  13 : 0.0
+  14 : 0.0
+  15 : 0.0
+  16 : 0.0
+  17 : 0.0
+  18 : 0.0
+  19 : 0.0
+  20 : 0.0
+  21 : 0.002140148
+  22 : 0.0
+# classes that are indistinguishable from single scan or inconsistent in
+# ground truth are mapped to their closest equivalent
+learning_map:
+  0  : 0      # "background"
+  1  : 0      
+  2  : 1      # "PTW"
+  3  : 0
+  4  : 2      # "pedestrian"
+  5  : 0
+  6  : 0
+  7  : 0
+  8  : 0
+  9  : 3      # "CommVeh"
+  10 : 4      # "vehicle"
+  11 : 0
+  12 : 0
+  13 : 0
+  14 : 0
+  15 : 0
+  16 : 0
+  17 : 0
+  18 : 0
+  19 : 0
+  20 : 0
+  21 : 5      # "Bicycle"
+  22 : 0
+learning_map_inv: # inverse of previous map
+  0  : 0      # "background"
+  1  : 2      # "PTW"     
+  2  : 4      # "pedestrian"
+  3  : 9      # "CommVeh"
+  4  : 10     # "vehicle"
+  5  : 21     # "Bicycle"
+learning_ignore: # Ignore classes
+  0: False
+  1: False 
+  2: False
+  3: False     
+  4: False     
+  5: False
+split: # sequence numbers
+  train:
+    - 0
+    - 1
+    - 2
+  valid:
+    - 0
+  test:
+    - 0
+

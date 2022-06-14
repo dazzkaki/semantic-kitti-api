@@ -206,7 +206,7 @@ if __name__ == '__main__':
     label = label & 0xFFFF       # get lower half for semantics
     if FLAGS.limit is not None:
       label = label[:FLAGS.limit]  # limit to desired length
-    label = remap_lut[label]       # remap to xentropy format
+    # label = remap_lut[label]       # remap to xentropy format
 
     # open prediction
     pred = np.fromfile(pred_file, dtype=np.int32)
@@ -214,7 +214,7 @@ if __name__ == '__main__':
     pred = pred & 0xFFFF         # get lower half for semantics
     if FLAGS.limit is not None:
       pred = pred[:FLAGS.limit]  # limit to desired length
-    pred = remap_lut[pred]       # remap to xentropy format
+    # pred = remap_lut[pred]       # remap to xentropy format
 
     # evaluate for all distances
     for idx in range(len(DISTANCES)):

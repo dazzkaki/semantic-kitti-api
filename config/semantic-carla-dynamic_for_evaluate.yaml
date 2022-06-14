@@ -1,0 +1,71 @@
+# This file is covered by the LICENSE file in the root of this project.
+name : "kitti"
+labels: 
+  0 :  "background"      # use
+  1 :  "building" 
+  2 :  "PTW"            # use
+  3 :  "other"
+  4 :  "pedestrian"     # use
+  5 :  "pole"
+  6 :  "road line"
+  7 :  "road"
+  8 :  "sidewalk"
+  9 :  "CommVeh"        # use
+  10 : "vehicle"        # use
+  11 : "wall"
+  12 : "traffic sign"
+  13 : "sky"
+  14 : "ground"
+  15 : "bridge"
+  16 : "rail track"
+  17 : "guard rail"
+  18 : "traffic light"
+  19 : "static"
+  20 : "dynamic"
+  21 : "Bicycle"        # use
+  22 : "terrain"
+color_map: # bgr
+  0  : [ 200, 200, 200]   # use "background" 0
+  1  : [   0, 255,   0]   # use "PTW" 1
+  2  : [   0,   0, 225]   # use "pedestrian" 2
+  3  : [ 255, 255,   0]   # use "CommVeh" 3
+  4  : [ 255,   0,   0]   # use "vehicle" 4
+  5  : [   0, 255, 255]   # use "Bicycle" 5
+content: # as a ratio with the total number of points
+  0  : 0.914702124
+  1  : 0.001902437
+  2  : 0.00541877
+  3  : 0.032984334
+  4  : 0.042852188
+  5  : 0.002140148
+# classes that are indistinguishable from single scan or inconsistent in
+# ground truth are mapped to their closest equivalent
+learning_map:
+  0  : 0      # "background"
+  1  : 1      # "PTW"
+  2  : 2      # "pedestrian"
+  3  : 3      # "CommVeh"
+  4  : 4      # "vehicle"
+  5  : 5      # "Bicycle"
+learning_map_inv: # inverse of previous map
+  0  : 0      # "background"
+  1  : 1      # "PTW"     
+  2  : 2      # "pedestrian"
+  3  : 3      # "CommVeh"
+  4  : 4      # "vehicle"
+  5  : 5      # "Bicycle"
+learning_ignore: # Ignore classes
+  0: False
+  1: False 
+  2: False
+  3: False     
+  4: False     
+  5: False
+split: # sequence numbers
+  train:
+    - 0
+  valid:
+    - 2
+  test:
+    - 1
+
